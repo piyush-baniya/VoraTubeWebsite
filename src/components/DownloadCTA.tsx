@@ -2,9 +2,11 @@ import { useReveal } from "../hooks/useReveal";
 
 /**
  * Single source of truth for the Android APK download link.
- * The APK is bundled with the site (public/app-release.apk) and served directly.
+ * The APK is bundled with the site (public/VoraTube.apk) and served directly.
+ * The public file is named "VoraTube.apk" so browsers always save it
+ * with the correct name, even when they ignore the download attribute.
  */
-export const APK_DOWNLOAD_URL = "/app-release.apk";
+export const APK_DOWNLOAD_URL = "/VoraTube.apk";
 
 export default function DownloadCTA() {
   const { ref, revealed } = useReveal<HTMLDivElement>();

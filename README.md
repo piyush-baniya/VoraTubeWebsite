@@ -36,5 +36,5 @@ npm run build && npx vercel deploy dist --prebuilt --prod
 ```
 
 ## Notes
-- The Android APK is served from the site itself at `/app-release.apk` and is linked by the Download button (`APK_DOWNLOAD_URL` in `src/components/DownloadCTA.tsx`).
+- The Android APK is served from the site itself at `/VoraTube.apk` and is linked by the Download button (`APK_DOWNLOAD_URL` in `src/components/DownloadCTA.tsx`). The file is deliberately named `VoraTube.apk` so browsers always save it with the app's name instead of the raw build filename.
 - If you later move the APK to an external host, update that single constant.
