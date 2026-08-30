@@ -363,6 +363,11 @@ a {
   padding: 5.5rem 0;
 }
 
+.showcase__phone {
+  display: flex;
+  justify-content: center;
+}
+
 .showcase__row {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
