@@ -10,6 +10,7 @@ export default function Footer() {
           <a href="#features">Features</a>
           <a href="#showcase">Screenshots</a>
           <a href="#download">Download</a>
+          <a href="/privacy-policy">Privacy Policy</a>
         </nav>
         <p>© {new Date().getFullYear()} VoraTube. A music player for Android.</p>
       </div>
