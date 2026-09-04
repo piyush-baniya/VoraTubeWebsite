@@ -5,13 +5,18 @@ import FeatureGrid from "./components/FeatureGrid";
 import DownloadCTA from "./components/DownloadCTA";
 import Footer from "./components/Footer";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 
 export default function App() {
   // Minimal path routing without an extra dependency: the only secondary
-  // page is the public privacy policy, which must live at a stable URL
-  // (Google Play requirement).
-  if (window.location.pathname.replace(/\/+$/, "") === "/privacy-policy") {
+  // pages are the public privacy policy and terms of use, which must live at
+  // stable URLs (Google Play requirement).
+  const path = window.location.pathname.replace(/\/+$/, "");
+  if (path === "/privacy-policy") {
     return <PrivacyPolicy />;
+  }
+  if (path === "/terms-of-use") {
+    return <TermsOfUse />;
   }
 
   return (

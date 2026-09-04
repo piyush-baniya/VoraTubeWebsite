@@ -6,5 +6,8 @@
   "installCommand": "npm install",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [{ "source": "/privacy-policy", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/privacy-policy", "destination": "/index.html" },
+    { "source": "/terms-of-use", "destination": "/index.html" }
+  ]
 }

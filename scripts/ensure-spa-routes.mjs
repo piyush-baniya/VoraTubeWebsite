@@ -9,5 +9,8 @@ const indexHtml = join(dist, "index.html");
 mkdirSync(join(dist, "privacy-policy"), { recursive: true });
 copyFileSync(indexHtml, join(dist, "privacy-policy", "index.html"));
 copyFileSync(indexHtml, join(dist, "privacy-policy.html"));
+mkdirSync(join(dist, "terms-of-use"), { recursive: true });
+copyFileSync(indexHtml, join(dist, "terms-of-use", "index.html"));
+copyFileSync(indexHtml, join(dist, "terms-of-use.html"));
 
-console.log("✓ emitted static routes: /privacy-policy");
+console.log("✓ emitted static routes: /privacy-policy, /terms-of-use");

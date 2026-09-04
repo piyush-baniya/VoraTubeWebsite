@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
       <main className="policy__content container">
         <h1>VoraTube Privacy Policy</h1>
         <p>
-          <strong>Effective date:</strong> September 3, 2026
+          <strong>Effective date:</strong> September 5, 2026
         </p>
         <p>
           VoraTube is an Android music player application ("the App") developed
@@ -166,19 +166,18 @@ export default function PrivacyPolicy() {
           </li>
         </ul>
 
-        <h2>5. Advertising (current status)</h2>
+        <h2>5. Advertising</h2>
         <p>
-          VoraTube integrates the <strong>Google Mobile Ads SDK</strong> to
-          show banner and interstitial advertisements.
+          VoraTube is now <strong>fully released</strong> and integrates the{" "}
+          <strong>Google Mobile Ads SDK</strong> to show banner and
+          interstitial advertisements.
         </p>
         <ul>
           <li>
-            <strong>Current status:</strong> the App is still using Google's{" "}
-            <strong>official test advertisements</strong> in its development
-            configuration. Production advertising, including any
-            consent-management flow, is not yet configured and will be
-            introduced in a future update, at which point this policy will be
-            updated accordingly.
+            <strong>Live advertising:</strong> the App displays{" "}
+            <strong>real, live advertisements</strong> served by Google through
+            the Google Mobile Ads SDK. Test advertisements are no longer used
+            in the released version of the App.
           </li>
           <li>
             When ads are shown, Google and its partners may collect and process
@@ -233,8 +232,8 @@ export default function PrivacyPolicy() {
           <li>a YouTube search you explicitly trigger;</li>
           <li>the donation webpage you explicitly open;</li>
           <li>
-            data processed by Google's advertising SDK when ads are displayed
-            (test ads in the current configuration).
+            data processed by Google's advertising SDK when live ads are
+            displayed.
           </li>
         </ul>
         <p>
@@ -357,10 +356,9 @@ export default function PrivacyPolicy() {
 
         <h2>13. Changes to this privacy policy</h2>
         <p>
-          We may update this privacy policy as VoraTube evolves (for example
-          when production advertising is introduced). The "Effective date" at
-          the top will be updated, and the current version will always be
-          available at this page.
+          We may update this privacy policy as VoraTube evolves. The "Effective
+          date" at the top will be updated, and the current version will always
+          be available at this page.
         </p>
 
         <h2>14. Contact information</h2>
