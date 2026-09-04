@@ -10,7 +10,7 @@ npm install
 npm run dev        # start dev server
 npm run build      # type-check + production build (outputs to dist/)
 npm run preview    # preview the production build
-npm run assets:logo # re-crop the logo/favicon from the Home screenshot
+npm run assets:logo # regenerate the favicon from public/logo.png
 ```
 
 ## Deploying to Vercel
