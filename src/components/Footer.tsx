@@ -9,7 +9,7 @@ export default function Footer() {
         <nav aria-label="Footer navigation">
           <a href="#features">Features</a>
           <a href="#showcase">Screenshots</a>
-          <a href="#download">Download</a>
+          <a href="#download">Get the App</a>
           <a href="/privacy-policy">Privacy Policy</a>
           <a href="/terms-of-use">Terms of Use</a>
         </nav>

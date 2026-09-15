@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 
 export default function PrivacyPolicy() {
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
       <main className="policy__content container">
         <h1>VoraTube Privacy Policy</h1>
         <p>
-          <strong>Effective date:</strong> September 5, 2026
+          <strong>Effective date:</strong> September 15, 2026
         </p>
         <p>
           VoraTube is an Android music player application ("the App") developed
@@ -31,8 +31,9 @@ export default function PrivacyPolicy() {
           music storage, and no server-side user profiles. The App does send
           small, non-identifying song details (such as a song title and artist
           name) to third-party lookup services so it can show lyrics and
-          genres, and it displays ads unless you activate Premium. Everything
-          else is described below.
+          genres, it uses Firebase Analytics to measure general feature usage,
+          and it displays ads unless you activate Premium. Everything else is
+          described below.
         </p>
 
         <h2>1. Information VoraTube accesses</h2>
@@ -72,7 +73,7 @@ export default function PrivacyPolicy() {
           <li>playlists and favorites</li>
           <li>playback history and playback statistics</li>
           <li>queue state and playback position</li>
-          <li>your in-app settings</li>
+          <li>your in-app settings (including audio preferences such as the volume boost toggle)</li>
           <li>your Premium activation state</li>
           <li>a cache of lyrics you have viewed</li>
           <li>cached artwork thumbnails</li>
@@ -117,6 +118,10 @@ export default function PrivacyPolicy() {
             settings.
           </li>
         </ul>
+        <p>
+          Like every Android app, VoraTube uses an <strong>internet/network
+          access permission</strong> for the network features described below.
+        </p>
 
         <h2>4. Network communications</h2>
         <p>
@@ -168,21 +173,24 @@ export default function PrivacyPolicy() {
 
         <h2>5. Advertising</h2>
         <p>
-          VoraTube is now <strong>fully released</strong> and integrates the{" "}
-          <strong>Google Mobile Ads SDK</strong> to show banner and
-          interstitial advertisements.
+          VoraTube is a fully released application and integrates the{" "}
+          <strong>Google Mobile Ads SDK</strong> to show{" "}
+          <strong>live, production banner and interstitial advertisements</strong>{" "}
+          served through Google AdMob.
         </p>
         <ul>
           <li>
-            <strong>Live advertising:</strong> the App displays{" "}
-            <strong>real, live advertisements</strong> served by Google through
-            the Google Mobile Ads SDK. Test advertisements are no longer used
-            in the released version of the App.
+            <strong>Live advertising:</strong> the App serves real, production
+            advertisements from Google's ad network (not test advertisements).
+            When ads are shown, they are delivered and paid for by Google's
+            advertising system.
           </li>
           <li>
             When ads are shown, Google and its partners may collect and process
             information (such as device identifiers and advertising
-            identifiers) under <strong>Google's own Privacy Policy</strong>:{" "}
+            identifiers) as required to provide advertising and measure
+            advertising performance, under <strong>Google's own Privacy
+            Policy</strong>:{" "}
             <a
               href="https://policies.google.com/technologies/ads"
               target="_blank"
@@ -198,13 +206,46 @@ export default function PrivacyPolicy() {
             processing by or account system in VoraTube itself.
           </li>
         </ul>
+        <p>
+          VoraTube itself does not sell your personal information. Advertising
+          data is processed by Google under Google's policies, not by
+          VoraTube.
+        </p>
 
         <h2>6. Analytics and crash reporting</h2>
         <p>
-          VoraTube does <strong>not</strong> include its own analytics service
-          and does <strong>not</strong> include its own crash-reporting
-          service. VoraTube does not build user profiles and does not track you
-          across apps or websites.
+          VoraTube uses <strong>Google Analytics for Firebase</strong> to
+          measure general app usage and engagement. This helps us understand
+          which features are used and how often, monitor product performance
+          and usage patterns, and improve VoraTube.
+        </p>
+        <p>
+          What Analytics collects: small, non-personal feature usage events and
+          the predefined app-usage properties that Firebase Analytics collects
+          automatically as part of its standard SDK configuration. Examples
+          include "shuffle toggled", "playlist created", "repeat mode changed",
+          "ad shown", and "ringtone exported." No song title, artist, album,
+          filename, file path, MediaStore URI, playlist name, lyrics text,
+          search query, email, personal text, precise location, or local music
+          library contents is ever sent to Analytics. Analytics is not used to
+          build user profiles and does not track you across apps or websites
+          for advertising purposes through our implementation.
+        </p>
+        <p>
+          Firebase Analytics data is governed by{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Google's Privacy Policy
+          </a>
+          .
+        </p>
+        <p>
+          VoraTube does <strong>not</strong> include its own crash-reporting
+          service. VoraTube does not use Crashlytics, Sentry, or any other
+          crash-reporting package.
         </p>
         <p>
           Note that the advertising SDK described in Section 5 is a third-party
@@ -233,7 +274,11 @@ export default function PrivacyPolicy() {
           <li>the donation webpage you explicitly open;</li>
           <li>
             data processed by Google's advertising SDK when live ads are
-            displayed.
+            displayed;
+          </li>
+          <li>
+            non-personal feature usage events sent to Firebase Analytics (see
+            Section 6).
           </li>
         </ul>
         <p>
@@ -257,9 +302,11 @@ export default function PrivacyPolicy() {
             server, and does not operate cloud storage for user music.
           </li>
           <li>
-            No method of transmission or storage is perfectly secure. VoraTube
-            does not claim that its security measures, or those of your device
-            or of third-party services, are infallible.
+            We and our integrated services use reasonable measures designed to
+            protect the information handled by VoraTube. No method of
+            transmission or storage is perfectly secure, and VoraTube does not
+            claim that its security measures, or those of your device or of
+            third-party services, are infallible.
           </li>
         </ul>
 
@@ -277,7 +324,7 @@ export default function PrivacyPolicy() {
           <li>clear the App's data in your device settings, or</li>
           <li>
             uninstall the App (which removes all VoraTube app data from your
-            device).
+            device, subject to Android's standard uninstall behavior).
           </li>
         </ul>
         <p>
@@ -289,8 +336,10 @@ export default function PrivacyPolicy() {
         <p>
           <strong>Third-party data.</strong> VoraTube cannot delete data
           retained by third parties such as LRCLIB, Apple, YouTube, Buy Me a
-          Momo, or Google's advertising infrastructure. Their retention
-          practices are governed by their respective privacy policies.
+          Momo, Google's advertising infrastructure, or Firebase Analytics.
+          Their retention practices and any available data controls (for
+          example Google's activity controls) are governed by their respective
+          privacy policies.
         </p>
 
         <h2>11. Children's privacy</h2>
@@ -341,10 +390,16 @@ export default function PrivacyPolicy() {
                 <td>Whatever the website itself processes</td>
               </tr>
               <tr>
-                <td>Google Mobile Ads</td>
-                <td>Advertising</td>
+                <td>Google Mobile Ads (AdMob)</td>
+                <td>Live advertising</td>
                 <td>When ads are shown (Premium off)</td>
                 <td>As described by Google's ad policies</td>
+              </tr>
+              <tr>
+                <td>Firebase Analytics (Google)</td>
+                <td>General feature usage measurement</td>
+                <td>Always (when analytics initializes)</td>
+                <td>Non-personal feature usage events only; no personal or local music data</td>
               </tr>
             </tbody>
           </table>
@@ -358,7 +413,7 @@ export default function PrivacyPolicy() {
         <p>
           We may update this privacy policy as VoraTube evolves. The "Effective
           date" at the top will be updated, and the current version will always
-          be available at this page.
+          be available at this page and in the App.
         </p>
 
         <h2>14. Contact information</h2>
@@ -384,3 +439,4 @@ export default function PrivacyPolicy() {
     </div>
   );
 }
+

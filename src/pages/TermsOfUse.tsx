@@ -16,152 +16,165 @@ export default function TermsOfUse() {
       <main className="policy__content container">
         <h1>VoraTube Terms of Use</h1>
         <p>
-          <strong>Effective date:</strong> September 5, 2026
+          <strong>Effective date:</strong> September 15, 2026
         </p>
         <p>
-          These Terms of Use ("Terms") govern your use of the VoraTube Android
-          application ("the App") developed by Piyush Das ("we", "us", "our").
-          By downloading, installing, or using the App, you agree to these
-          Terms. If you do not agree, please do not use the App.
+          VoraTube is an Android music player application ("the App") developed
+          by Piyush Das ("we", "us", "our"). By downloading, installing, or
+          using the App, you agree to these Terms of Use. If you do not agree
+          with any part of these terms, please do not use the App.
+        </p>
+        <p>
+          The short version: <strong>VoraTube is a local, personal music
+          player.</strong> It plays the music that already exists on your
+          device, keeps your library data on your device, and asks you to use
+          it lawfully and responsibly. There is no company, business entity, or
+          registered address behind VoraTube — it is an independently developed
+          App.
         </p>
 
-        <h2>1. Release status</h2>
+        <h2>1. Use of the App</h2>
         <p>
-          VoraTube is <strong>fully released</strong>. The App is no longer in
-          development, beta, or testing. The version distributed on this
-          website and on Google Play is the production version of the App.
+          VoraTube is a local-first music player designed to help you browse,
+          organize, and play music that already exists on your device. You
+          agree to use the App for lawful, personal, non-commercial purposes
+          and in a manner that respects the rights of others. You may not
+          misuse the App, attempt to reverse engineer it, or attempt to
+          disrupt its normal operation.
         </p>
 
-        <h2>2. License</h2>
+        <h2>2. Local music and device content</h2>
         <p>
-          We grant you a personal, non-exclusive, non-transferable, revocable
-          license to use the App on devices you own or control, for personal,
-          non-commercial purposes. You may not resell, sublicense, reverse
-          engineer (except where permitted by law), or use the App to provide a
-          service to others.
+          The App reads audio files already present on your device through your
+          device's music library, or files you explicitly choose to import
+          yourself. Your music files and your library data remain on your
+          device. VoraTube does not upload your audio files to any server. You
+          are responsible for ensuring you have the right to use and play the
+          music on your device in accordance with applicable law.
         </p>
 
-        <h2>3. Advertising</h2>
+        <h2>3. Third-party services</h2>
         <p>
-          The App displays <strong>live, real advertisements</strong> served by
-          Google through the Google Mobile Ads SDK. Test or demo advertisements
-          are not used in the released version of the App.
+          To provide certain features, the App may send small, non-identifying
+          details about a song (such as its title and artist) to third-party
+          services for lyrics and genre lookup. The App may also open external
+          websites you explicitly choose to visit, such as YouTube or a
+          donation page. Those services are governed by their own terms and
+          privacy policies, and VoraTube is not responsible for them. See the
+          App's <a href="/privacy-policy">Privacy Policy</a> for details of
+          what is sent and when.
         </p>
-        <ul>
-          <li>
-            Advertisements are delivered, targeted, and measured by Google and
-            its partners, not by VoraTube. Your interactions with ads are
-            governed by{" "}
-            <a
-              href="https://policies.google.com/technologies/ads"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Google's advertising policies
-            </a>{" "}
-            and{" "}
-            <a
-              href="https://policies.google.com/privacy"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Google's Privacy Policy
-            </a>
-            .
-          </li>
-          <li>
-            If you activate <strong>Premium</strong>, all ad placements in the
-            App are disabled and no ad requests are made.
-          </li>
-          <li>
-            We do not control the content of third-party advertisements and are
-            not responsible for the products, services, or websites they
-            promote. Interacting with an ad is an interaction between you and
-            the advertiser.
-          </li>
-        </ul>
-
-        <h2>4. Acceptable use</h2>
-        <ul>
-          <li>
-            Use the App only with music and audio files you have the legal
-            right to access and play.
-          </li>
-          <li>
-            Do not attempt to interfere with, disrupt, or circumvent the
-            advertising or any other part of the App (for example, by
-            artificially generating ad impressions or clicks).
-          </li>
-          <li>
-            Do not use the App in any way that violates applicable law or the
-            rights of others.
-          </li>
-        </ul>
-
-        <h2>5. Third-party services</h2>
         <p>
-          The App relies on third-party services for certain optional features:
-          LRCLIB (lyrics lookup), Apple's iTunes Search API (genre lookup),
-          YouTube ("Find on YouTube" action), Buy Me a Momo (donations), and
-          Google Mobile Ads (advertising). These services are governed by their
-          own terms and privacy policies. VoraTube is not responsible for their
-          content, availability, or practices.
+          The App also uses <strong>Firebase Analytics</strong> (Google) to
+          measure general, non-personal feature usage — for example which
+          features are used and how often. It never sends song details, your
+          library, or any personal information to Analytics. See the App's{" "}
+          <a href="/privacy-policy">Privacy Policy</a> for details.
+        </p>
+
+        <h2>4. Advertising</h2>
+        <p>
+          VoraTube is a fully released app and displays live, production
+          advertisements served through the Google Mobile Ads SDK (Google
+          AdMob), unless you activate Premium. Ads are provided by third
+          parties under their own policies. Activating Premium is a local
+          entitlement within the App and disables all ad placements; it
+          involves no payment processing by or account system in VoraTube
+          itself.
+        </p>
+
+        <h2>5. Audio features</h2>
+        <p>
+          VoraTube includes locally implemented audio functionality, such as a{" "}
+          <strong>volume boost</strong> toggle, that processes audio on your
+          device during playback. Audio behavior may vary depending on your
+          Android device, hardware, OS version, headphones, speakers, and any
+          manufacturer audio processing. Audio features operate on the files
+          already on your device; using them never uploads your music
+          anywhere.
         </p>
 
         <h2>6. Intellectual property</h2>
         <p>
-          The App itself — its code, design, name, and branding — is owned by
-          the developer. Your music files and other content remain yours;
-          VoraTube claims no ownership over them. Song metadata, lyrics, and
-          artwork retrieved from third-party services remain the property of
-          their respective owners.
+          Unless stated otherwise, the VoraTube name, logo, and the interface
+          of the App are the property of the developer. The music, artwork, and
+          other content in your library remain the property of their respective
+          owners. VoraTube does not claim any ownership of the media you play
+          through the App.
         </p>
 
-        <h2>7. No warranty</h2>
+        <h2>7. User responsibility</h2>
         <p>
-          The App is provided <strong>"as is" and "as available"</strong>{" "}
-          without warranties of any kind, express or implied, including
-          warranties of merchantability, fitness for a particular purpose, and
-          non-infringement. We do not warrant that the App will be
-          uninterrupted, error-free, or that third-party services (lyrics,
-          genres, ads) will always be available.
+          You are responsible for how you use the App and for the music you
+          play through it. Please respect copyright and the rights of artists
+          and rights holders. VoraTube is provided for use with media you are
+          lawfully allowed to play, and you agree not to use it to infringe
+          anyone's rights. VoraTube does not provide or supply copyrighted
+          music.
         </p>
 
-        <h2>8. Limitation of liability</h2>
+        <h2>8. Availability</h2>
         <p>
-          To the maximum extent permitted by law, the developer shall not be
-          liable for any indirect, incidental, special, consequential, or
-          punitive damages, or any loss of data, profits, or goodwill arising
-          from your use of or inability to use the App. Because your music and
-          listening data stay on your device, you are responsible for backing
-          up your own files.
+          VoraTube is a fully released app, publicly available on Google Play.
+          It is provided "as is" and may be updated, changed, or discontinued
+          at any time. We make no guarantee that the App will always be
+          available, free of errors, or compatible with every device, and we do
+          not guarantee that every feature will work identically on every
+          device.
         </p>
 
-        <h2>9. Changes to the App and these Terms</h2>
+        <h2>9. Disclaimer of warranties</h2>
         <p>
-          We may update the App and these Terms from time to time. The
-          "Effective date" above will be updated, and the current version will
-          always be available at this page. Continued use of the App after
-          changes take effect constitutes acceptance of the revised Terms.
+          The App is provided "as is" and "as available", without warranties of
+          any kind, whether express or implied, including any implied
+          warranties of merchantability, fitness for a particular purpose, or
+          non-infringement. We do not warrant that the App's functionality,
+          lyric or genre lookups, or playback features will be uninterrupted or
+          error-free on every device.
         </p>
 
-        <h2>10. Termination</h2>
+        <h2>10. Limitation of liability</h2>
         <p>
-          You may stop using the App and uninstall it at any time. We reserve
-          the right to restrict or revoke access to the App for anyone who
-          violates these Terms.
+          To the maximum extent permitted by law, the developer is not liable
+          for any indirect, incidental, special, or consequential damages
+          arising from your use of, or inability to use, the App. VoraTube does
+          not claim that all music playback or features will be flawless on
+          every device.
         </p>
 
-        <h2>11. Contact</h2>
+        <h2>11. Changes to the App and these terms</h2>
         <p>
-          Questions about these Terms can be sent to{" "}
-          <a href="mailto:baniyapiyushwork@gmail.com">
-            baniyapiyushwork@gmail.com
-          </a>
-          . See also our <a href="/privacy-policy">Privacy Policy</a>.
+          We may update these Terms of Use and the App as it evolves, and may
+          modify, improve, remove, or replace features in future versions. The
+          "Effective date" at the top will be updated, and the current version
+          will always be available at this page. Continued use of the App after
+          any change means you accept the updated terms.
         </p>
 
+        <h2>12. Contact information</h2>
+        <p>
+          If you have questions about these Terms of Use or about VoraTube,
+          contact:
+        </p>
+        <ul>
+          <li>
+            <strong>App:</strong> VoraTube
+          </li>
+          <li>
+            <strong>Developer:</strong> Piyush Das
+          </li>
+          <li>
+            <strong>Contact:</strong>{" "}
+            <a href="mailto:baniyapiyushwork@gmail.com">
+              baniyapiyushwork@gmail.com
+            </a>
+          </li>
+        </ul>
+        <p>
+          See also our <a href="/privacy-policy">Privacy Policy</a>.
+        </p>
       </main>
     </div>
   );
 }
+

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import GooglePlayCTA from "./GooglePlayCTA";
 
 const LINKS = [
   { href: "#features", label: "Features" },
   { href: "#showcase", label: "Screenshots" },
   { href: "#stats", label: "Statistics" },
-  { href: "#download", label: "Download" },
+  { href: "#download", label: "Get the App" },
 ];
 
 export default function Navbar() {
@@ -47,9 +48,7 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <a className="btn btn--small" href="#download" onClick={() => setOpen(false)}>
-              Get the App
-            </a>
+            <GooglePlayCTA className="btn btn--small" />
           </li>
         </ul>
       </nav>

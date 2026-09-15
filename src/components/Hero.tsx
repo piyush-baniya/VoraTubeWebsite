@@ -1,4 +1,5 @@
 import { useReveal } from "../hooks/useReveal";
+import GooglePlayCTA from "./GooglePlayCTA";
 
 export default function Hero() {
   const { ref, revealed } = useReveal<HTMLDivElement>();
@@ -18,9 +19,7 @@ export default function Hero() {
             library, played beautifully.
           </p>
           <div className="hero__cta">
-            <a className="btn btn--primary" href="#download">
-              Download for Android
-            </a>
+            <GooglePlayCTA className="btn btn--primary" />
             <a className="btn btn--ghost" href="#features">
               Explore features
             </a>

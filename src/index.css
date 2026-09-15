@@ -217,6 +217,17 @@ a {
   font-size: 1.1rem;
 }
 
+.btn--inactive {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.3);
+}
+.btn--inactive:hover,
+.btn--inactive:focus-visible {
+  transform: none;
+  box-shadow: none;
+}
+
 .gradient-text {
   background: var(--gradient);
   -webkit-background-clip: text;
