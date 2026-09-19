@@ -16,7 +16,7 @@ export default function DownloadCTA() {
         <h2 id="download-title">Ready to hit play?</h2>
         <p>Get VoraTube on Google Play and take your library for a spin.</p>
 
-        <GooglePlayCTA className="btn btn--primary btn--big" />
+        <GooglePlayCTA className="play-badge play-badge--big" />
 
         <p className="download__ios">
           🍎 Using iPhone? VoraTube for iOS is <strong>coming later</strong> — stay tuned.

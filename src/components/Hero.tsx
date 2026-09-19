@@ -19,7 +19,7 @@ export default function Hero() {
             library, played beautifully.
           </p>
           <div className="hero__cta">
-            <GooglePlayCTA className="btn btn--primary" />
+            <GooglePlayCTA className="play-badge" />
             <a className="btn btn--ghost" href="#features">
               Explore features
             </a>

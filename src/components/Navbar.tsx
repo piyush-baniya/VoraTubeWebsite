@@ -48,7 +48,7 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <GooglePlayCTA className="btn btn--small" />
+            <GooglePlayCTA className="play-badge play-badge--small" />
           </li>
         </ul>
       </nav>

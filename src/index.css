@@ -217,14 +217,69 @@ a {
   font-size: 1.1rem;
 }
 
-.btn--inactive {
+/* ---------- Google Play badge CTA ---------- */
+/*
+ * Official badge artwork (public/play-badge.png) — never cropped, recolored,
+ * or otherwise restyled, per Google's brand guidelines. Only the rendered
+ * height changes here; the aspect ratio is fixed by the asset's own
+ * width/height attributes. The transparent padding baked into the PNG is the
+ * clear space the guidelines require, so no extra margin is added.
+ *
+ * Sizes: 74px (default, ~50px visible badge), 48px small (~32px visible),
+ * 80px big (~54px visible) — all above Google's 28px minimum badge height.
+ */
+.play-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.play-badge img {
+  height: 74px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease;
+}
+
+.play-badge:hover,
+.play-badge:focus-visible {
+  transform: translateY(-2px);
+}
+
+.play-badge:hover img,
+.play-badge:focus-visible img {
+  box-shadow: 0 12px 34px rgba(124, 58, 237, 0.45);
+}
+
+.play-badge:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 4px;
+}
+
+.play-badge--small img {
+  height: 48px;
+}
+
+.play-badge--big img {
+  height: 80px;
+}
+
+.play-badge--inactive {
   opacity: 0.6;
   cursor: not-allowed;
-  filter: grayscale(0.3);
+  filter: grayscale(0.85);
 }
-.btn--inactive:hover,
-.btn--inactive:focus-visible {
+
+.play-badge--inactive:hover,
+.play-badge--inactive:focus-visible {
   transform: none;
+}
+
+.play-badge--inactive:hover img,
+.play-badge--inactive:focus-visible img {
   box-shadow: none;
 }
 
@@ -282,14 +337,14 @@ a {
   padding: 0;
 }
 
-.navbar__links a:not(.btn) {
+.navbar__links a:not(.btn):not(.play-badge) {
   color: var(--text-dim);
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
-.navbar__links a:not(.btn):hover,
-.navbar__links a:not(.btn):focus-visible {
+.navbar__links a:not(.btn):not(.play-badge):hover,
+.navbar__links a:not(.btn):not(.play-badge):focus-visible {
   color: var(--text);
 }
 
@@ -374,6 +429,7 @@ a {
 .hero__cta {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.9rem;
   margin-bottom: 2rem;
 }
@@ -788,12 +844,20 @@ a {
     display: flex;
   }
 
-  .navbar__links a:not(.btn) {
+  .navbar__links a:not(.btn):not(.play-badge) {
     display: block;
     padding: 0.7rem 0.4rem;
   }
 
   .navbar__links .btn {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  /* The badge is inline-flex by default; inside the collapsed menu it becomes
+     a full-width row so it sits centered under the stacked nav links. */
+  .navbar__links .play-badge {
+    display: flex;
     justify-content: center;
     margin-top: 0.5rem;
   }
@@ -876,11 +940,14 @@ a {
   }
 
   .btn,
+  .play-badge,
+  .play-badge img,
   .feature-card {
     transition: none !important;
   }
 
   .btn--primary:hover,
+  .play-badge:hover,
   .feature-card:hover {
     transform: none;
   }
