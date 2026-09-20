@@ -28,12 +28,12 @@ export default function PrivacyPolicy() {
         <p>
           The short version: <strong>your music files and your listening data
           stay on your device.</strong> VoraTube has no user accounts, no cloud
-          music storage, and no server-side user profiles. The App does send
-          small, non-identifying song details (such as a song title and artist
-          name) to third-party lookup services so it can show lyrics and
-          genres, it uses Firebase Analytics to measure general feature usage,
-          and it displays ads unless you activate Premium. Everything else is
-          described below.
+          music storage, and no server-side user profiles. When you view lyrics
+          or when a song has no genre information, the App sends small,
+          non-identifying song details (such as a song title, artist, and
+          album) to third-party lookup services so it can show lyrics and
+          genres. It displays ads unless you activate Premium. Everything else
+          is described below.
         </p>
 
         <h2>1. Information VoraTube accesses</h2>
@@ -41,9 +41,12 @@ export default function PrivacyPolicy() {
         <ul>
           <li>
             <strong>Audio files already on your device.</strong> VoraTube reads
-            music that already exists in your device's music library (through
-            Android's MediaStore) or files you explicitly import yourself using
-            the file picker.
+            music that already exists in your device's music library through
+            Android's MediaStore. When you use features such as lyrics or
+            changing a song's artwork image, you may also explicitly select
+            individual files (a <code>.lrc</code> lyrics file or an image file)
+            through your device's file picker; those files are read into the
+            App and stored in the App's own private storage.
           </li>
           <li>
             <strong>Audio file metadata.</strong> Song title, artist, album,
@@ -71,16 +74,33 @@ export default function PrivacyPolicy() {
         <ul>
           <li>your local library metadata (songs, albums, artists, genres)</li>
           <li>playlists and favorites</li>
-          <li>playback history and playback statistics</li>
+          <li>
+            playback history, recently played songs, most-played songs,
+            listening statistics, and play counts
+          </li>
           <li>queue state and playback position</li>
-          <li>your in-app settings (including audio preferences such as the volume boost toggle)</li>
+          <li>your in-app settings, including the sleep timer</li>
+          <li>
+            your audio enhancement settings (equalizer curve, playback speed,
+            crossfade/gapless transition preference, volume boost, audio
+            balance) — these are applied <strong>on your device</strong> during
+            playback and are never transmitted anywhere
+          </li>
           <li>your Premium activation state</li>
           <li>a cache of lyrics you have viewed</li>
+          <li>
+            the <code>.lrc</code> lyrics files you upload and any custom
+            artwork image you set
+          </li>
           <li>cached artwork thumbnails</li>
           <li>
             any ringtone you create with the ringtone cutter (stored in app
             storage and registered in your device's media library under
             "Ringtones/VoraTube")
+          </li>
+          <li>
+            backup files you create (stored in the location you choose on your
+            device)
           </li>
         </ul>
         <p>
@@ -90,6 +110,20 @@ export default function PrivacyPolicy() {
             for your music, playlists, history, or any other personal data.
           </strong>{" "}
           VoraTube does not upload your audio files anywhere.
+        </p>
+        <p>
+          <strong>Backup and restore.</strong> The App can create a backup of
+          your library data, either manually or on a scheduled automatic basis.
+          A backup is a single file written to a location you choose on your
+          device (for example a folder you select with the system folder
+          picker); it contains your library metadata, playlists, favorites,
+          play history, listening statistics, settings, user-uploaded lyrics,
+          and queue snapshot. It does <strong>not</strong> contain your audio
+          files. Backup files remain under your control — VoraTube does not
+          upload them to any server. If you save a backup into a folder that is
+          synced by a cloud service you already use, that service processes the
+          file under its own policies. Restoring a backup reads the file you
+          choose and replaces your local VoraTube data with its contents.
         </p>
 
         <h2>3. Music and media permissions</h2>
@@ -117,11 +151,17 @@ export default function PrivacyPolicy() {
             audio as your ringtone. VoraTube does not change any other system
             settings.
           </li>
+          <li>
+            To keep playing music and show playback controls while the App is
+            not in the foreground, VoraTube runs a{" "}
+            <strong>foreground media service</strong> and holds a{" "}
+            <strong>wake lock</strong> (<code>FOREGROUND_SERVICE</code>,{" "}
+            <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>, and{" "}
+            <code>WAKE_LOCK</code> permissions). This keeps playback active
+            only while you are playing music; it does not otherwise run in the
+            background.
+          </li>
         </ul>
-        <p>
-          Like every Android app, VoraTube uses an <strong>internet/network
-          access permission</strong> for the network features described below.
-        </p>
 
         <h2>4. Network communications</h2>
         <p>
@@ -130,25 +170,26 @@ export default function PrivacyPolicy() {
           features fall into two groups:
         </p>
         <p>
-          <strong>Automatic, background lookups (small song metadata only):</strong>
+          <strong>Automatic, best-effort lookups (small song metadata only):</strong>
         </p>
         <ul>
           <li>
             <strong>Lyrics — LRCLIB.</strong> When lyrics for a song are not
             already embedded in the file or cached on your device, VoraTube may
-            send that song's <strong>title, artist, and album</strong> to the
-            public LRCLIB lyrics service (<code>https://lrclib.net/api</code>)
-            to fetch matching lyrics. Results are cached on your device. If the
-            request fails, playback continues normally without lyrics. VoraTube
-            never uploads your music files to LRCLIB.
+            send that song's <strong>title, artist, album, and duration</strong>{" "}
+            to the public LRCLIB lyrics service (
+            <code>https://lrclib.net/api</code>) to fetch matching lyrics.
+            Results are cached on your device. If the request fails, playback
+            continues normally without lyrics. VoraTube never uploads your
+            music files to LRCLIB.
           </li>
           <li>
             <strong>Genre enrichment — Apple iTunes Search API.</strong> For
             songs that have no genre information, VoraTube may send the song's{" "}
             <strong>title and artist</strong> to Apple's iTunes Search API (
             <code>https://itunes.apple.com/search</code>) to look up a genre
-            label. Results are cached locally with a short timeout. VoraTube
-            never uploads your music files to Apple.
+            label. Results are cached locally. VoraTube never uploads your
+            music files to Apple.
           </li>
         </ul>
         <p>
@@ -162,6 +203,12 @@ export default function PrivacyPolicy() {
             terms. No search happens automatically.
           </li>
           <li>
+            <strong>"Search lyrics on the web."</strong> When you choose this
+            action, VoraTube opens your default browser with a search (for
+            example Google Search) for that song's title, artist, and lyrics.
+            No search happens automatically.
+          </li>
+          <li>
             <strong>Donation page ("Buy Me a Momo").</strong> When you open the
             donation screen, VoraTube loads the Buy Me a Momo page (
             <code>https://buymemomo.com/piyushbaniya</code>) inside an in-app
@@ -170,34 +217,26 @@ export default function PrivacyPolicy() {
             service handles your information under its own privacy policy.
           </li>
         </ul>
+        <p>
+          <strong>App updates.</strong> VoraTube checks with Google Play for
+          available updates using the standard Google Play in-app update
+          mechanism. These are ordinary Google Play Services update checks and
+          do not transmit personal data from within the App.
+        </p>
 
         <h2>5. Advertising</h2>
         <p>
-          VoraTube is a fully released application and integrates the{" "}
-          <strong>Google Mobile Ads SDK</strong> to show{" "}
-          <strong>live, production banner and interstitial advertisements</strong>{" "}
-          served through Google AdMob.
+          VoraTube integrates the <strong>Google Mobile Ads SDK</strong> and
+          displays <strong>banner and interstitial advertisements</strong>{" "}
+          served through Google AdMob. VoraTube does not display rewarded
+          ("watch and earn") advertisements.
         </p>
         <ul>
           <li>
-            <strong>Live advertising:</strong> the App serves real, production
-            advertisements from Google's ad network (not test advertisements).
-            When ads are shown, they are delivered and paid for by Google's
-            advertising system.
-          </li>
-          <li>
             When ads are shown, Google and its partners may collect and process
             information (such as device identifiers and advertising
-            identifiers) as required to provide advertising and measure
-            advertising performance, under <strong>Google's own Privacy
-            Policy</strong>:{" "}
-            <a
-              href="https://policies.google.com/technologies/ads"
-              target="_blank"
-              rel="noreferrer"
-            >
-              https://policies.google.com/technologies/ads
-            </a>
+            identifiers) under <strong>Google's own Privacy Policy</strong>:{" "}
+            https://policies.google.com/technologies/ads
           </li>
           <li>
             If you activate <strong>Premium</strong>, all ad placements in
@@ -206,35 +245,28 @@ export default function PrivacyPolicy() {
             processing by or account system in VoraTube itself.
           </li>
         </ul>
-        <p>
-          VoraTube itself does not sell your personal information. Advertising
-          data is processed by Google under Google's policies, not by
-          VoraTube.
-        </p>
 
         <h2>6. Analytics and crash reporting</h2>
         <p>
-          VoraTube uses <strong>Google Analytics for Firebase</strong> to
-          measure general app usage and engagement. This helps us understand
-          which features are used and how often, monitor product performance
-          and usage patterns, and improve VoraTube.
+          VoraTube uses <strong>Firebase Analytics</strong> (from Google) to
+          measure general feature usage. This helps us understand which
+          features are used and how the app performs, so we can improve
+          VoraTube.
         </p>
         <p>
-          What Analytics collects: small, non-personal feature usage events and
-          the predefined app-usage properties that Firebase Analytics collects
-          automatically as part of its standard SDK configuration. Examples
-          include "shuffle toggled", "playlist created", "repeat mode changed",
-          "ad shown", and "ringtone exported." No song title, artist, album,
-          filename, file path, MediaStore URI, playlist name, lyrics text,
-          search query, email, personal text, precise location, or local music
-          library contents is ever sent to Analytics. Analytics is not used to
-          build user profiles and does not track you across apps or websites
-          for advertising purposes through our implementation.
+          What Analytics collects: small, non-personal feature usage events
+          only. Examples include "shuffle toggled", "playlist created", "repeat
+          mode changed", "ad shown", and "ringtone exported." No song title,
+          artist, album, filename, file path, MediaStore URI, playlist name,
+          lyrics text, search query, email, personal text, precise location, or
+          local music library contents is ever sent to Analytics. Analytics
+          does not build user profiles and does not track you across apps or
+          websites for advertising purposes through our implementation.
         </p>
         <p>
           Firebase Analytics data is governed by{" "}
           <a
-            href="https://policies.google.com/privacy"
+            href="https://policies.google.com/technologies/ads"
             target="_blank"
             rel="noreferrer"
           >
@@ -268,19 +300,26 @@ export default function PrivacyPolicy() {
           leaves your device only in the limited ways described above:
         </p>
         <ul>
-          <li>song title/artist/album sent to LRCLIB for lyrics;</li>
+          <li>song title/artist/album/duration sent to LRCLIB for lyrics;</li>
           <li>song title/artist sent to Apple's iTunes Search API for genre lookup;</li>
           <li>a YouTube search you explicitly trigger;</li>
+          <li>a web search for lyrics that you explicitly trigger;</li>
           <li>the donation webpage you explicitly open;</li>
           <li>
-            data processed by Google's advertising SDK when live ads are
-            displayed;
+            data processed by Google's advertising SDK when ads are displayed;
           </li>
           <li>
             non-personal feature usage events sent to Firebase Analytics (see
             Section 6).
           </li>
         </ul>
+        <p>
+          Backup files you create with the backup and restore feature remain in
+          a location you choose on your own device and are not shared by
+          VoraTube. If you store a backup in a folder that a cloud service you
+          use syncs to the cloud, that service processes the file under its own
+          policies.
+        </p>
         <p>
           Each of those third parties processes information under its own
           privacy policy. VoraTube does not control their practices.
@@ -298,15 +337,19 @@ export default function PrivacyPolicy() {
             this policy use HTTPS.
           </li>
           <li>
+            Backup files are not encrypted by VoraTube; they are stored
+            wherever you choose to put them. Treat a backup file with the same
+            care you would treat any file containing personal information,
+            especially if you store it in a synced or shared location.
+          </li>
+          <li>
             VoraTube does not upload your music library or audio files to any
             server, and does not operate cloud storage for user music.
           </li>
           <li>
-            We and our integrated services use reasonable measures designed to
-            protect the information handled by VoraTube. No method of
-            transmission or storage is perfectly secure, and VoraTube does not
-            claim that its security measures, or those of your device or of
-            third-party services, are infallible.
+            No method of transmission or storage is perfectly secure. VoraTube
+            does not claim that its security measures, or those of your device
+            or of third-party services, are infallible.
           </li>
         </ul>
 
@@ -324,7 +367,7 @@ export default function PrivacyPolicy() {
           <li>clear the App's data in your device settings, or</li>
           <li>
             uninstall the App (which removes all VoraTube app data from your
-            device, subject to Android's standard uninstall behavior).
+            device).
           </li>
         </ul>
         <p>
@@ -334,12 +377,16 @@ export default function PrivacyPolicy() {
           required.
         </p>
         <p>
+          <strong>Backup files.</strong> VoraTube does not track, upload, or
+          delete backup files you create. They remain in the location you chose
+          until you delete, move, or overwrite them. Restoring a backup
+          replaces your local VoraTube data with the backup's contents.
+        </p>
+        <p>
           <strong>Third-party data.</strong> VoraTube cannot delete data
-          retained by third parties such as LRCLIB, Apple, YouTube, Buy Me a
-          Momo, Google's advertising infrastructure, or Firebase Analytics.
-          Their retention practices and any available data controls (for
-          example Google's activity controls) are governed by their respective
-          privacy policies.
+          retained by third parties such as LRCLIB, Apple, YouTube, Google's
+          advertising infrastructure, or Firebase Analytics. Their retention
+          practices are governed by their respective privacy policies.
         </p>
 
         <h2>11. Children's privacy</h2>
@@ -369,7 +416,7 @@ export default function PrivacyPolicy() {
                 <td>LRCLIB (lrclib.net)</td>
                 <td>Lyrics lookup</td>
                 <td>Automatic, best-effort</td>
-                <td>Song title, artist, album</td>
+                <td>Song title, artist, album, duration</td>
               </tr>
               <tr>
                 <td>Apple iTunes Search (itunes.apple.com)</td>
@@ -384,22 +431,34 @@ export default function PrivacyPolicy() {
                 <td>Song title and artist as a search query</td>
               </tr>
               <tr>
+                <td>Web search (e.g., Google Search)</td>
+                <td>"Search lyrics on the web" action</td>
+                <td>Only when you tap it</td>
+                <td>Song title and artist as a search query</td>
+              </tr>
+              <tr>
                 <td>Buy Me a Momo (buymemomo.com)</td>
                 <td>Donations</td>
                 <td>Only when you open it</td>
                 <td>Whatever the website itself processes</td>
               </tr>
               <tr>
-                <td>Google Mobile Ads (AdMob)</td>
-                <td>Live advertising</td>
+                <td>Google Mobile Ads</td>
+                <td>Banner and interstitial advertising (AdMob)</td>
                 <td>When ads are shown (Premium off)</td>
                 <td>As described by Google's ad policies</td>
               </tr>
               <tr>
                 <td>Firebase Analytics (Google)</td>
                 <td>General feature usage measurement</td>
-                <td>Always (when analytics initializes)</td>
+                <td>When analytics initializes</td>
                 <td>Non-personal feature usage events only; no personal or local music data</td>
+              </tr>
+              <tr>
+                <td>Google Play (Google Play Services)</td>
+                <td>In-app app update checks</td>
+                <td>Automatic, best-effort</td>
+                <td>Standard Play Services update checks</td>
               </tr>
             </tbody>
           </table>
@@ -413,7 +472,8 @@ export default function PrivacyPolicy() {
         <p>
           We may update this privacy policy as VoraTube evolves. The "Effective
           date" at the top will be updated, and the current version will always
-          be available at this page and in the App.
+          be available at the policy URL linked from the App and from the
+          Google Play listing.
         </p>
 
         <h2>14. Contact information</h2>
@@ -435,8 +495,14 @@ export default function PrivacyPolicy() {
             </a>
           </li>
         </ul>
+        <p>
+          <em>
+            This policy describes the current version of VoraTube. The
+            published version is available at{" "}
+            https://voratube.vercel.app/privacy-policy.
+          </em>
+        </p>
       </main>
     </div>
   );
 }
-
