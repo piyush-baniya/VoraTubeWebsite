@@ -574,10 +574,12 @@ a {
 
 /* Phone mockups */
 .hero__phone {
+  --hero-phone-width: 250px;
+  --hero-back-width: 210px;
   position: relative;
   display: flex;
   justify-content: center;
-  min-height: 620px;
+  min-height: 540px;
 }
 
 .phone {
@@ -587,6 +589,18 @@ a {
   background: var(--surface);
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(124, 58, 237, 0.25);
+}
+
+.hero__phone .phone {
+  background: transparent;
+}
+
+.hero__phone .phone--tilt {
+  width: var(--hero-phone-width);
+}
+
+.hero__phone .phone--back {
+  width: var(--hero-back-width);
 }
 
 .phone img {
@@ -938,7 +952,7 @@ a {
   }
 
   .hero__phone {
-    min-height: 560px;
+    min-height: 520px;
   }
 
   .showcase__row {
@@ -1014,6 +1028,8 @@ a {
   }
 
   .hero__phone {
+    --hero-phone-width: 240px;
+    --hero-back-width: 190px;
     min-height: 460px;
   }
 
@@ -1041,6 +1057,11 @@ a {
 
   .hero {
     padding-top: 4rem;
+  }
+
+  .hero__phone {
+    --hero-phone-width: 215px;
+    --hero-back-width: 165px;
   }
 
   .phone {
