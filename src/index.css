@@ -357,7 +357,7 @@ a {
 
 .apkpure-badge img {
   width: auto;
-  height: 74px;
+  height: 64px;
   max-width: 100%;
   object-fit: contain;
   border-radius: 8px;
@@ -380,11 +380,11 @@ a {
 }
 
 .apkpure-badge--small img {
-  height: 48px;
+  height: 41.5px;
 }
 
 .apkpure-badge--big img {
-  height: 80px;
+  height: 69px;
 }
 
 .gradient-text {
@@ -535,6 +535,14 @@ a {
   color: var(--text-dim);
   font-size: 1.12rem;
   max-width: 34rem;
+  margin: 0 0 0.8rem;
+}
+
+.hero__privacy {
+  color: var(--text);
+  font-size: 0.98rem;
+  font-weight: 600;
+  max-width: 34rem;
   margin: 0 0 2rem;
 }
 
@@ -648,6 +656,22 @@ a {
 /* ---------- Showcase ---------- */
 .showcase {
   padding: 5.5rem 0;
+}
+
+.showcase__graphic {
+  width: min(100%, 900px);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.showcase__graphic img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .showcase__phone {
@@ -903,7 +927,8 @@ a {
     text-align: center;
   }
 
-  .hero__sub {
+  .hero__sub,
+  .hero__privacy {
     margin-inline: auto;
   }
 

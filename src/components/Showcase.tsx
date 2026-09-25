@@ -10,32 +10,32 @@ type Shot = {
 
 const SHOTS: Shot[] = [
   {
-    src: "/screenshots/player.jpg",
-    alt: "VoraTube full-screen player with large circular album art and playback controls",
-    title: "A player that stays out of the way",
-    copy: "Full-screen artwork, quick access to favorites, lyrics and the queue, with volume boost, 10-second skip, shuffle and repeat right where your thumb expects them.",
-    bullets: ["Circular album artwork", "Volume boost toggle", "±10s skip, shuffle & repeat"],
+    src: "/screenshots/FullPlayer.png",
+    alt: "VoraTube full-screen player with animated artwork, lyrics, and playback controls",
+    title: "A player built for deep listening",
+    copy: "A focused full-screen player keeps artwork, lyrics, the queue, and controls within reach. Shape every listen with volume boost, ReplayGain, crossfade, speed, and a mini player.",
+    bullets: ["Full-screen and mini player", "Volume boost + ReplayGain", "Lyrics, queue, and quick controls"],
   },
   {
-    src: "/screenshots/queue.jpg",
-    alt: "Up Next queue bottom sheet listing upcoming songs with drag handles",
-    title: "Your queue, under control",
-    copy: "The Up Next sheet shows exactly what's coming. Reorder tracks with drag handles, jump to anything, or clear the queue in one tap.",
-    bullets: ["Drag to reorder", "One-tap remove", "Clear the whole queue"],
+    src: "/screenshots/Playlist.png",
+    alt: "VoraTube playlist screen showing songs, queue, and the Now Playing panel",
+    title: "Build the perfect listening flow",
+    copy: "Create a playlist from any screen, add or remove songs, pin what matters, reorder tracks, and keep Favorites close. The queue stays in sync as you play.",
+    bullets: ["Create, rename, and manage playlists", "Reorder songs and the queue", "Favorites, recent, and new music"],
   },
   {
-    src: "/screenshots/ringtoneCutter.jpg",
-    alt: "Ringtone cutter screen with waveform trim handles and set as ringtone button",
-    title: "Built-in ringtone cutter",
-    copy: "Turn any song in your library into a ringtone. Drag the handles on the waveform to pick a segment, fine-tune by the second, preview, and set it — all inside the app.",
-    bullets: ["Waveform trim handles", "Start / end fine-tuning", "Set as ringtone directly"],
+    src: "/screenshots/RingtoneCutter.png",
+    alt: "Ringtone maker screen with waveform trim handles, play button, and Set as Ringtone action",
+    title: "Turn a favorite song into your ringtone",
+    copy: "Select a section from any song, preview it, fine-tune the start and end points, and export the result — ready to become your system ringtone.",
+    bullets: ["Waveform trim handles", "Start and end fine-tuning", "Preview, export, and set as ringtone"],
   },
   {
-    src: "/screenshots/smartMix.jpg",
-    alt: "Daily Mix smart playlist generated from listening habits",
-    title: "Smart mixes from your habits",
-    copy: "Daily Mix builds a personalized playlist from what you actually listen to — generated automatically, refreshed for you, ready to play or shuffle.",
-    bullets: ["Personalized Daily Mix", "Play or shuffle instantly", "Regenerated as you listen"],
+    src: "/screenshots/SmartMixes.png",
+    alt: "VoraTube Smart Mixes screen with Favorites, Daily, Chill, Energy, Focus, Happy, Sad, Romantic, Throwback, and Discovery tiles",
+    title: "A smart mix for every moment",
+    copy: "Smart Mixes make it easy to play your local library in a new way. Choose a feeling or a moment and VoraTube builds the mix for you.",
+    bullets: ["Favorites, Daily, and Discovery mixes", "Chill, Energy, Focus, Happy, and Sad", "Romantic and Throwback playlists"],
   },
 ];
 
@@ -65,6 +65,7 @@ function ShotCard({ shot, flip }: { shot: Shot; flip: boolean }) {
 }
 
 export default function Showcase() {
+  const graphic = useReveal<HTMLDivElement>();
   const stats = useReveal<HTMLDivElement>();
   return (
     <section className="showcase container" id="showcase" aria-label="App screenshots">
@@ -72,8 +73,20 @@ export default function Showcase() {
         <h2>
           Every screen, <span className="gradient-text">thought through</span>
         </h2>
-        <p>Real screens from VoraTube — no mockups, no marketing fluff.</p>
+        <p>Real screens from the latest VoraTube release — made for listening, organizing, and making music yours.</p>
       </div>
+
+      <div
+        ref={graphic.ref}
+        className={`showcase__graphic reveal ${graphic.revealed ? "revealed" : ""}`}
+      >
+        <img
+          src="/screenshots/graphic.png"
+          alt="VoraTube — Your music. Your library. Your way."
+          loading="lazy"
+        />
+      </div>
+
       {SHOTS.map((s, i) => (
         <ShotCard key={s.title} shot={s} flip={i % 2 === 1} />
       ))}
@@ -85,18 +98,26 @@ export default function Showcase() {
         aria-label="Statistics feature"
       >
         <div className="stats__copy">
-          <h3>Know your listening</h3>
+          <h3>See your listening story</h3>
           <p>
-            The Statistics screen keeps score: listening time, plays, top artist, most played
-            tracks, recently played, and even your peak listening day.
+            Explore most played songs, recently played music, listening history, play counts,
+            listening duration, and daily, weekly, and yearly insights — all from one clear view.
           </p>
         </div>
         <div className="stats__phone">
           <div className="phone phone--small">
-            <img src="/screenshots/statistics.jpg" alt="Statistics screen showing listening time, top artist and recently played songs" loading="lazy" />
+            <img
+              src="/screenshots/Statistics.png"
+              alt="Statistics screen showing listening time, top songs, and recently played music"
+              loading="lazy"
+            />
           </div>
           <div className="phone phone--small phone--offset">
-            <img src="/screenshots/library.jpg" alt="Library screen with Songs, Albums, Artists and Genres tabs" loading="lazy" />
+            <img
+              src="/screenshots/Library.png"
+              alt="Library screen with Songs, Albums, Artists, and Genres tabs"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
