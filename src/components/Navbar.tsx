@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ApkpureCTA from "./ApkpureCTA";
 import GooglePlayCTA from "./GooglePlayCTA";
 
 const LINKS = [
@@ -47,8 +48,9 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li>
+          <li className="navbar__store-badges">
             <GooglePlayCTA className="play-badge play-badge--small" />
+            <ApkpureCTA className="apkpure-badge apkpure-badge--small" />
           </li>
         </ul>
       </nav>

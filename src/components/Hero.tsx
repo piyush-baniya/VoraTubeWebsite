@@ -1,4 +1,5 @@
 import { useReveal } from "../hooks/useReveal";
+import ApkpureCTA from "./ApkpureCTA";
 import GooglePlayCTA from "./GooglePlayCTA";
 
 export default function Hero() {
@@ -20,6 +21,7 @@ export default function Hero() {
           </p>
           <div className="hero__cta">
             <GooglePlayCTA className="play-badge" />
+            <ApkpureCTA className="apkpure-badge" />
             <a className="btn btn--ghost" href="#features">
               Explore features
             </a>

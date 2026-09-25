@@ -348,6 +348,45 @@ a {
   box-shadow: none;
 }
 
+.apkpure-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.apkpure-badge img {
+  width: auto;
+  height: 74px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease;
+}
+
+.apkpure-badge:hover,
+.apkpure-badge:focus-visible {
+  transform: translateY(-2px);
+}
+
+.apkpure-badge:hover img,
+.apkpure-badge:focus-visible img {
+  box-shadow: 0 12px 34px rgba(124, 58, 237, 0.45);
+}
+
+.apkpure-badge:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 4px;
+}
+
+.apkpure-badge--small img {
+  height: 48px;
+}
+
+.apkpure-badge--big img {
+  height: 80px;
+}
+
 .gradient-text {
   background: var(--gradient);
   -webkit-background-clip: text;
@@ -402,14 +441,22 @@ a {
   padding: 0;
 }
 
-.navbar__links a:not(.btn):not(.play-badge) {
+.navbar__store-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.navbar__links a:not(.btn):not(.play-badge):not(.apkpure-badge) {
   color: var(--text-dim);
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
-.navbar__links a:not(.btn):not(.play-badge):hover,
-.navbar__links a:not(.btn):not(.play-badge):focus-visible {
+.navbar__links a:not(.btn):not(.play-badge):not(.apkpure-badge):hover,
+.navbar__links a:not(.btn):not(.play-badge):not(.apkpure-badge):focus-visible {
   color: var(--text);
 }
 
@@ -771,6 +818,15 @@ a {
   gap: 1.1rem;
 }
 
+.download__stores {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 100%;
+}
+
 .download__logo {
   border-radius: 18px;
   box-shadow: 0 0 50px rgba(124, 58, 237, 0.45);
@@ -909,7 +965,7 @@ a {
     display: flex;
   }
 
-  .navbar__links a:not(.btn):not(.play-badge) {
+  .navbar__links a:not(.btn):not(.play-badge):not(.apkpure-badge) {
     display: block;
     padding: 0.7rem 0.4rem;
   }
@@ -921,10 +977,15 @@ a {
 
   /* The badge is inline-flex by default; inside the collapsed menu it becomes
      a full-width row so it sits centered under the stacked nav links. */
-  .navbar__links .play-badge {
+  .navbar__links .play-badge,
+  .navbar__links .apkpure-badge {
     display: flex;
     justify-content: center;
     margin-top: 0.5rem;
+  }
+
+  .navbar__store-badges {
+    width: 100%;
   }
 
   .hero__phone {
@@ -1007,12 +1068,14 @@ a {
   .btn,
   .play-badge,
   .play-badge img,
+  .apkpure-badge,
   .feature-card {
     transition: none !important;
   }
 
   .btn--primary:hover,
   .play-badge:hover,
+  .apkpure-badge:hover,
   .feature-card:hover {
     transform: none;
   }

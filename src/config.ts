@@ -14,3 +14,5 @@ export const GOOGLE_PLAY_URL: string = "https://play.google.com/store/apps/detai
 
 /** True once a real Play Store URL has been configured. */
 export const PLAY_URL_CONFIGURED = GOOGLE_PLAY_URL !== "#";
+
+export const APKPURE_URL: string = "https://apkpure.com/p/com.piyushbaniya.vora_tube";
