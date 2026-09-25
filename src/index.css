@@ -578,6 +578,7 @@ a {
   --hero-back-width: 210px;
   position: relative;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
   min-height: 540px;
 }
