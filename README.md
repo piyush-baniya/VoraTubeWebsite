@@ -39,3 +39,15 @@ npm run build && npx vercel deploy dist --prebuilt --prod
 - The primary installation CTA is the official **"Get it on Google Play" badge graphic**, rendered by `src/components/GooglePlayCTA.tsx` (used in the navbar, hero and download section). The destination is the single constant `GOOGLE_PLAY_URL` in `src/config.ts`, currently set to the live Play listing (`com.piyushbaniya.vora_tube`). Change that one value and every CTA updates automatically. Setting it back to `#` makes the badge render as a visibly inactive placeholder (`PLAY_URL_CONFIGURED` becomes `false`).
 - The badge artwork is vendored at `public/play-badge.png` — Google's unmodified `en_badge_web_generic.png` (646×250) from [play.google.com/intl/en_us/badges](https://play.google.com/intl/en_us/badges). Do **not** crop, recolor, or rebuild it; Google's brand guidelines forbid modifying the badge. The transparent padding baked into the file *is* the required clear space (¼ of the badge height), so size it only via the `.play-badge` rules in `src/index.css` (default 74px / `--small` 48px / `--big` 80px rendered box). Never scale below the 28px minimum badge height.
 - The old direct APK download (`public/VoraTube.apk`) has been retired; do not re-add APK links.
+
+## Legal content synchronization
+
+The website copies of the legal documents are `src/content/legal/privacy-policy.md` and `src/content/legal/terms-of-use.md`. They are byte-for-byte copies of the v1.4.0 app assets and should be replaced together with the app's `assets/legal/privacy_policy.md` and `assets/legal/terms_of_use.md` files.
+
+With a checkout of the v1.4.0 app, verify the copies without adding a dependency:
+
+```bash
+npm run verify:legal -- "C:\\path\\to\\VoraTube"
+```
+
+The command exits unsuccessfully if either website file differs from its authoritative app asset.
