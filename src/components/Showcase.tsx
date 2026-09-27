@@ -81,7 +81,7 @@ export default function Showcase() {
         className={`showcase__graphic reveal ${graphic.revealed ? "revealed" : ""}`}
       >
         <img
-          src="/screenshots/graphic.png"
+          src="/images/voratube-release-screens.png"
           alt="VoraTube — Your music. Your library. Your way."
           loading="lazy"
         />
