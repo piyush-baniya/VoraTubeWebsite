@@ -1,54 +1,637 @@
-# VoraTube Website
+# 🎵 VoraTube
 
-Official single-page website for **VoraTube** — a Flutter music player for Android.
-Built with React + Vite + TypeScript, dark purple theme, real app screenshots.
+<p align="center">
+  <img src="assets/voratube_logo.png" alt="VoraTube Logo" width="140">
+</p>
 
-## Development
+<p align="center">
+  <strong>A modern, feature-rich offline music player for Android.</strong>
+</p>
 
-```bash
-npm install
-npm run dev        # start dev server
-npm run build      # type-check + production build (outputs to dist/)
-npm run preview    # preview the production build
-npm run assets:logo # regenerate the favicon from public/logo.png
+<p align="center">
+  Built with Flutter • Designed for smooth playback • Privacy-focused • No account required
+</p>
+
+<p align="center">
+
+![Flutter](https://img.shields.io/badge/Flutter-3.47.1-02569B?logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-3.13.1-0175C2?logo=dart&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active-8B5CF6)
+
+</p>
+
+---
+
+## ✨ About
+
+**VoraTube** is a modern Android music player built with Flutter, focused on delivering a smooth, beautiful, and feature-rich local music experience.
+
+It is designed around three principles:
+
+* 🎨 **Beautiful UI** — modern, polished interfaces and animations
+* ⚡ **Smooth experience** — responsive playback and navigation
+* 🔒 **Local-first** — your music files and library stay on your device, and no account is required for the core player
+
+VoraTube does not require an account to use the core music-player experience.
+
+### Privacy
+
+VoraTube is local-first: your music files, library and playback history are stored and processed on your device. The app may use network access for optional metadata enrichment, and the production build includes Firebase Analytics and Google AdMob. The full text is available in the in-app privacy policy and in [`PRIVACY_POLICY.md`](PRIVACY_POLICY.md).
+
+---
+
+## 📱 Screenshots
+
+<p align="center">
+  <img src="assets/Home.png" width="30%" alt="VoraTube Home">
+  <img src="assets/Library.png" width="30%" alt="VoraTube Library">
+  <img src="assets/Playlist.png" width="30%" alt="VoraTube Playlist">
+</p>
+
+<p align="center">
+  <img src="assets/SmartMixes.png" width="30%" alt="VoraTube Smart Mix">
+  <img src="assets/Statistics.png" width="30%" alt="VoraTube Statistics">
+  <img src="assets/RingtoneCutter.png" width="30%" alt="VoraTube Ringtone Cutter">
+</p>
+
+---
+
+# 🚀 Features
+
+## 🎧 Music Playback
+
+* Local music playback
+* Play, pause and resume
+* Next / previous track
+* Seek through songs
+* Accurate playback position
+* Background playback
+* Playback session restoration
+* Current-song persistence
+* Playback position restoration
+* Automatic advancement to the next playable track
+* Broken-source handling
+* Playback queue support
+
+---
+
+## 📚 Music Library
+
+VoraTube automatically works with your device's music library and organizes your collection into:
+
+* Songs
+* Albums
+* Artists
+* Genres
+* Playlists
+
+The library is designed to keep your music accessible without requiring manual import workflows.
+
+---
+
+## 🔎 Search
+
+Quickly search your local music library.
+
+Search across:
+
+* Songs
+* Artists
+* Albums
+* Playlists
+
+---
+
+## 📋 Playlists
+
+Create and manage your own playlists.
+
+Supported operations include:
+
+* Create playlists
+* Rename playlists
+* Delete playlists
+* Add songs
+* Remove songs
+* Reorder songs
+* Play all
+* Shuffle
+* Play next
+* Queue management
+
+---
+
+## 🎶 Queue
+
+A complete playback queue system lets you control exactly what plays next.
+
+Features include:
+
+* Add to queue
+* Play next
+* Play all
+* Remove songs
+* Reorder queue items
+* Queue persistence
+* Queue/session restoration
+* Current-track synchronization
+
+---
+
+## 🧠 Smart Music
+
+VoraTube includes intelligent music organization and recommendation features.
+
+### Smart Mix
+
+Generate a dynamic listening mix based on your library and listening data.
+
+### Smart Mood
+
+Discover music based on mood-oriented recommendations.
+
+### Genre Suggestions
+
+VoraTube can suggest genres using its existing genre-enrichment system and allows you to select from the generated genre options.
+
+---
+
+## 📊 Listening Statistics
+
+Track your listening activity directly inside the app.
+
+Statistics include:
+
+* Listening time
+* Play counts
+* Top songs
+* Recently played songs
+* Daily listening
+* Weekly listening
+* Yearly listening
+* Listening graphs
+* Playback history
+
+The statistics system is designed around actual playback activity rather than manually entered data.
+
+---
+
+## 🎤 Lyrics
+
+VoraTube includes an integrated lyrics experience.
+
+Features include:
+
+* Lyrics panel
+* Animated lyrics interface
+* Per-song lyrics
+* Lyrics synchronization
+* Time-based lyric progression
+* Full-player lyrics experience
+
+---
+
+## 🎚️ Audio Controls
+
+VoraTube provides additional audio controls for users who want more control over playback.
+
+### Equalizer
+
+A 10-band equalizer with selectable presets for shaping the sound of your music.
+
+### Volume Booster
+
+Boost playback volume beyond the device level when you need extra headroom.
+
+### Preamp
+
+Adjust the preamp level to control the audio signal before playback processing.
+
+### ReplayGain
+
+Support for ReplayGain-based volume normalization.
+
+### Crossfade
+
+Blend the end of one track into the start of the next for smoother transitions.
+
+### Playback Speed
+
+Adjust the playback speed for spoken-word, podcast-style and long-form tracks.
+
+---
+
+## 🎼 Metadata
+
+Manage your music metadata directly from the application.
+
+Edit:
+
+* Title
+* Artist
+* Album
+* Genre
+* Year
+
+VoraTube also provides genre suggestion functionality to help categorize songs.
+
+---
+
+## 📳 MiniPlayer
+
+A persistent MiniPlayer provides quick access to the current track.
+
+Features include:
+
+* Current artwork
+* Song information
+* Play/pause
+* Seek
+* Horizontal scrubbing
+* Vertical swipe gestures
+* Open Full Player
+* Stop playback
+* Persistent playback state
+
+---
+
+## 🎵 Full Player
+
+A dedicated full-screen player provides an immersive listening experience.
+
+Includes:
+
+* Large artwork
+* Playback controls
+* Seek bar
+* Current position
+* Duration
+* Lyrics
+* Lyrics synchronization
+* Favorite controls
+* Audio controls
+* Queue interaction
+
+---
+
+## 🔔 Background Playback & Media Controls
+
+VoraTube continues playback while the application is in the background.
+
+Android media controls provide access to:
+
+* Play/pause
+* Previous
+* Next
+* Current song
+* Artist
+* Artwork
+* Playback state
+
+This integrates with Android's media-session system for a native playback experience.
+
+---
+
+## 🔒 Lock Screen Controls
+
+When music is playing, Android's lock screen can display the current media session.
+
+Supported information includes:
+
+* Song title
+* Artist
+* Artwork
+* Playback state
+* Previous
+* Play/pause
+* Next
+
+---
+
+## 📱 Android Notification
+
+VoraTube provides an Android media notification while playback is active.
+
+The notification updates as songs change and provides playback controls without requiring the application to be opened.
+
+---
+
+## 📳 Ringtone Cutter
+
+Create ringtones from songs in your library.
+
+Features include:
+
+* Select a section of a song
+* Preview the selected section
+* Export ringtone
+* Save the resulting ringtone
+* Android ringtone integration
+
+Exported ringtones are handled separately from the normal music library.
+
+---
+
+## 🏷️ Edit Tags
+
+Edit song metadata directly from the application without requiring an external tag editor.
+
+Supported metadata includes:
+
+* Title
+* Artist
+* Album
+* Genre
+* Year
+
+---
+
+## 💾 Storage Information
+
+The Settings screen provides storage information from the Android device.
+
+It can display:
+
+* Total storage
+* Used storage
+* Available storage
+* VoraTube app usage
+
+---
+
+## ⚙️ Settings
+
+VoraTube includes a dedicated settings area for configuring the listening experience.
+
+Available controls include:
+
+* Theme presets (Purple, Aurora, Ocean, Ember, Emerald, Rosé, Midnight, OLED, Sepia)
+* Equalizer presets
+* Preamp
+* ReplayGain
+* Crossfade
+* Playback speed
+* Sleep timer
+* Hidden songs
+* Storage information
+* App usage
+
+---
+
+# 🎨 Design
+
+VoraTube uses a dark, modern visual language with a distinctive purple-themed identity, and ships with nine selectable theme presets: Purple, Aurora, Ocean, Ember, Emerald, Rosé, Midnight, OLED and Sepia.
+
+The UI focuses on:
+
+* Smooth animations
+* Clear hierarchy
+* Large artwork
+* Responsive interactions
+* Modern cards
+* Bottom navigation
+* Bottom sheets
+* Full-screen playback
+* Consistent visual components
+
+The goal is to make a powerful music player feel simple and enjoyable to use.
+
+---
+
+# 🛠️ Tech Stack
+
+VoraTube is built using the Flutter ecosystem.
+
+| Technology               | Usage                                 |
+| ------------------------ | ------------------------------------- |
+| **Flutter**              | Application framework                 |
+| **Dart**                 | Programming language                  |
+| **Riverpod**             | State management                      |
+| **Drift (SQLite)**       | Local library, playlists & statistics |
+| **just_audio**           | Audio playback                        |
+| **audio_service**        | Background playback & media controls  |
+| **Android MediaSession** | Lock-screen and notification controls |
+| **Android MediaStore**   | Local music library                   |
+| **Flutter plugins**      | Android platform integrations         |
+
+---
+
+# 🏗️ Architecture
+
+VoraTube follows a modular Flutter architecture designed to keep features separated and maintainable.
+
+Major areas include:
+
+```text
+lib/
+├── app/            # theme, shared app widgets
+├── core/           # db, player, ingest, storage, permissions, audio, genre
+├── features/
+│   ├── ads/
+│   ├── collections/   # listening statistics & history
+│   ├── donation/
+│   ├── library/
+│   ├── lyrics/
+│   ├── player/
+│   ├── playlists/
+│   ├── ringtones/
+│   ├── search/
+│   ├── settings/
+│   └── smart_music/
+├── services/       # analytics
+├── shared/         # reusable widgets, extensions, utils
+├── firebase_options.dart
+└── main.dart
 ```
 
-## Deploying to Vercel
+The exact project structure may evolve as development continues.
 
-The project ships with `vercel.json` (framework: vite, output: `dist`).
+---
 
-### Option A — Git integration (recommended)
-1. Push this folder to a GitHub/GitLab/Bitbucket repository.
-2. On [vercel.com](https://vercel.com) → **Add New → Project** → import the repo.
-3. Vercel auto-detects Vite. Leave defaults (install: `npm install`, build: `npm run build`, output: `dist`) and click **Deploy**.
-4. Every push to the production branch redeploys automatically; PRs get preview deployments.
+# 📋 Requirements
 
-### Option B — CLI
-```bash
-npm i -g vercel
-vercel          # preview deployment
-vercel --prod   # production deployment
+For development you will need:
+
+* Flutter SDK
+* Dart SDK
+* Android Studio
+* Android SDK
+* Android device or emulator
+
+Recommended:
+
+```text
+Flutter 3.47.1
+Dart 3.13.1
 ```
 
-### Local deploy check
-```bash
-npm run build && npx vercel deploy dist --prebuilt --prod
-```
+VoraTube currently targets Android.
 
-## Notes
-- The primary installation CTA is the official **"Get it on Google Play" badge graphic**, rendered by `src/components/GooglePlayCTA.tsx` (used in the navbar, hero and download section). Its destination is the single constant `GOOGLE_PLAY_URL` in `src/config.ts`, currently set to the live Play listing (`com.piyushbaniya.vora_tube`). Change that one value and every Play CTA updates automatically. Setting it back to `#` makes the badge render as a visibly inactive placeholder (`PLAY_URL_CONFIGURED` becomes `false`).
-- The companion **"Get it on Apkpure"** graphic is rendered from the supplied `public/apkpure-badge.png` artwork by `src/components/ApkpureCTA.tsx` beside the Google Play badge in the navbar, hero and download section. Its destination is `APKPURE_URL` in `src/config.ts`.
-- The Google Play badge artwork is vendored at `public/play-badge.png` — Google's unmodified `en_badge_web_generic.png` (646×250) from [play.google.com/intl/en_us/badges](https://play.google.com/intl/en_us/badges). Do **not** crop, recolor, or rebuild it; Google's brand guidelines forbid modifying the badge. The transparent padding baked into the file *is* the required clear space (¼ of the badge height), so size it only via the `.play-badge` rules in `src/index.css` (default 74px / `--small` 48px / `--big` 80px rendered box). Never scale below the 28px minimum badge height.
-- The old direct APK download (`public/VoraTube.apk`) has been retired; the APKPure link points to its app listing, not a bundled APK.
+---
 
-## Legal content synchronization
+# 🧑‍💻 Getting Started
 
-The website copies of the legal documents are `src/content/legal/privacy-policy.md` and `src/content/legal/terms-of-use.md`. They are byte-for-byte copies of the v1.4.0 app assets and should be replaced together with the app's `assets/legal/privacy_policy.md` and `assets/legal/terms_of_use.md` files.
-
-With a checkout of the v1.4.0 app, verify the copies without adding a dependency:
+Clone the repository:
 
 ```bash
-npm run verify:legal -- "C:\\path\\to\\VoraTube"
+git clone https://github.com/piyush-baniya/VoraTube.git
 ```
 
-The command exits unsuccessfully if either website file differs from its authoritative app asset.
+Enter the project:
+
+```bash
+cd VoraTube
+```
+
+Install dependencies:
+
+```bash
+flutter pub get
+```
+
+Check your Flutter environment:
+
+```bash
+flutter doctor
+```
+
+Connect an Android device and run:
+
+```bash
+flutter devices
+```
+
+Then:
+
+```bash
+flutter run
+```
+
+---
+
+# 🔨 Build
+
+### Debug APK
+
+```bash
+flutter build apk --debug
+```
+
+### Release APK
+
+```bash
+flutter build apk --release
+```
+
+The release APK will be generated under:
+
+```text
+build/app/outputs/flutter-apk/
+```
+
+> Release builds require a properly configured Android signing key. Never commit your keystore or signing credentials to the repository.
+
+---
+
+# 🧪 Testing
+
+Run static analysis:
+
+```bash
+flutter analyze
+```
+
+Run tests:
+
+```bash
+flutter test
+```
+
+Format the project:
+
+```bash
+dart format .
+```
+
+---
+
+# 📱 Supported Platform
+
+### Android
+
+VoraTube is currently developed for Android.
+
+### iOS
+
+iOS support is not currently released.
+
+The project is currently focused on delivering the Android experience first.
+
+---
+
+# 🗺️ Roadmap
+
+VoraTube is actively evolving.
+
+Potential future improvements include:
+
+* More advanced audio processing
+* More personalization
+* Additional statistics
+* More powerful playlist tools
+* UI/animation improvements
+* Additional Android integrations
+* Expanded platform support
+
+The roadmap may change as development continues.
+
+---
+
+# 🤝 Contributing
+
+Contributions, suggestions, bug reports, and feature ideas are welcome.
+
+Before making large changes:
+
+1. Open an issue describing the problem or feature.
+2. Discuss the proposed approach.
+3. Make the changes in a separate branch.
+4. Test the changes.
+5. Open a pull request.
+
+For bugs, please include:
+
+* Android version
+* Device model
+* VoraTube version
+* Steps to reproduce
+* Expected behavior
+* Actual behavior
+* Relevant logs or screenshots
+
+---
+
+# 🐛 Bug Reports
+
+If you encounter a problem, please open an issue in the repository.
+
+Include enough information to reproduce the issue so it can be investigated efficiently.
+
+---
+
+# 📄 License
+
+License information will be added to this repository.
+
+---
+
+# 💜 VoraTube
+
+Built with Flutter and a lot of attention to the music-listening experience.
+
+**Listen. Discover. Organize. Enjoy.**
+
+<p align="center">
+  Made with 💜 for music lovers.
+</p>
