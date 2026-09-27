@@ -775,6 +775,12 @@ a {
   min-height: 420px;
 }
 
+.stats__phone > .phone:first-child {
+  position: relative;
+  z-index: 2;
+  transform: rotate(-4deg) translateY(-0.6rem);
+}
+
 .phone--small {
   width: 205px;
   border-radius: 26px;
@@ -785,7 +791,7 @@ a {
   right: 0;
   bottom: -14%;
   transform: rotate(5deg);
-  z-index: 2;
+  z-index: 1;
 }
 
 /* ---------- Features ---------- */
